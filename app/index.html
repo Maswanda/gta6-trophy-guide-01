@@ -3,23 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Trophy Guide — GTA VI PS5 trophies, tracked</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="hero">
+  <div class="hero-text">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="tagline">Every trophy, its official name and grade, a guide in our own words with its sources, and a tracker that remembers your progress — all offline.</p>
+  </div>
+  <div class="progress-card" id="progressCard">
+    <div class="progress-big"><span id="earnedCount">0</span><span class="of">/ 55</span></div>
+    <div class="progress-label">trophies earned</div>
+    <div class="progress-bar"><div id="progressFill"></div></div>
+    <div class="progress-sub" id="progressSub">Platinum: locked</div>
+  </div>
 </header>
+
+<section class="roadmap" id="roadmap">
+  <h2>Roadmap to the platinum</h2>
+  <p class="roadmap-intro">Play it in this order. Story first, then the character finales and the two partner trophies (the missable ones), then activities, then collectibles, then the 100% mop-up.</p>
+  <ol id="roadmapList"></ol>
+</section>
+
 <div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+  <label class="ctl">Search <input id="search" type="search" placeholder="Trophy name or guide…"></label>
+  <label class="ctl">Kind
+    <select id="kind">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="missable">Missable</option>
+      <option value="collectibles">Collectibles</option>
+      <option value="activities">Activities</option>
+      <option value="online">Online</option>
+    </select>
+  </label>
+  <label class="ctl">Grade
+    <select id="grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="ctl check"><input id="hideEarned" type="checkbox"> Hide earned</label>
+  <label class="ctl check"><input id="spoiler" type="checkbox"> Spoiler-safe: hide story trophies until earned</label>
   <button id="export" type="button">Export progress</button>
   <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
 </div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
+
+<p class="count-line" id="countLine"></p>
+
+<main id="list"></main>
+
+<section class="sources-note">
+  <h2>Sources</h2>
+  <p>Every trophy's name, description and grade are shown as PlayStation publishes them. Each guide is written in our own words for this guide; the facts it uses come from the official trophy list (PlayStation) and the trophy lists on Exophase and PSNProfiles, named beside each guide. No guide text is copied from another guide.</p>
+</section>
+
+<footer>
+  <p>Leonida Trophy Guide — an unofficial fan guide. Not affiliated with Rockstar Games or PlayStation. Works fully offline; your progress never leaves your browser.</p>
+</footer>
 <script type="module" src="app.js"></script>
 </body>
 </html>
